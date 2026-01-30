@@ -15,7 +15,7 @@ const STAGES = {
   intro: {
     bg: "assets/intro.png",
     title: "Τα Αντικείμενα Μιλούν!",
-    text: `Πιέστε το "Αρχή" για εκκίνηση`,
+    text: `Πληροφορίες σχετικα με την εφαρμογη`,
     buttons: [
       { label: "Open Scanner", action: () => {
           stopAmbient();
@@ -29,7 +29,6 @@ const STAGES = {
     bg: "assets/role-selection.png",
     title: "Menu",
     text: `Ancient Scanner Detector 3000`,
-    buttons: [
       
 
   instructions: {
