@@ -17,16 +17,11 @@ const STAGES = {
     title: "Τα Αντικείμενα Μιλούν!",
     text: `Πιέστε το "Αρχή" για εκκίνηση`,
     buttons: [
-      { label: "Αρχή", action: () => {
-          enableSound();
-          playAmbient();
-          speak(STAGES.intro.text);
-          buttonsEl.innerHTML = "";
-          const contBtn = document.createElement("button");
-          contBtn.textContent = "Continue";
-          contBtn.addEventListener("click", () => goTo("role"));
-          buttonsEl.appendChild(contBtn);
-      }}
+      { label: "Open Scanner", action: () => {
+          stopAmbient();
+          window.open(`ar.html?from=${currentStage}`, "_blank");
+      }},
+      { label: "Library", action: () => goTo("instructions") }
     ]
   },
 
@@ -35,13 +30,7 @@ const STAGES = {
     title: "Menu",
     text: `Ancient Scanner Detector 3000`,
     buttons: [
-      { label: "Open Scanner", action: () => {
-          stopAmbient();
-          window.open(`ar.html?from=${currentStage}`, "_blank");
-      }},
-      { label: "Library", action: () => goTo("instructions") }
-    ]
-  },
+      
 
   instructions: {
     bg: "assets/instructions.png",
