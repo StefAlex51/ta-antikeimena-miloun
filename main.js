@@ -15,16 +15,29 @@ const STAGES = {
   intro: {
     bg: "assets/intro.png",
     title: "Τα Αντικείμενα Μιλούν!",
-    text: `Πληροφορίες σχετικα με την εφαρμογη`,
+    text: 
+          blah blah blah context<br>
+          Πατήστε "Αρχή" για να συνεχίσετε!<br>
+          ,
     buttons: [
-      { label: "Open Scanner", action: () => {
-          stopAmbient();
-          window.open(`ar.html?from=${currentStage}`, "_blank");
+      { label: "Library", action: () => {
+          enableSound();
+          playAmbient();
+          speak(STAGES.intro.text);
+          buttonsEl.innerHTML = "";
+          const contBtn = document.createElement("button");
+          contBtn.textContent = "Library button again";
+          contBtn.addEventListener("click", () => goTo("role"));
+          buttonsEl.appendChild(contBtn);
+          goTo("instructions")
       }},
-      { label: "Library", action: () => goTo("instructions") }
+       { label: "Open Scanner", action: () => {
+          stopAmbient();
+          window.open(ar.html?from=${currentStage}, "_blank");
+      }}
     ]
   },
-
+  
   role: {
     bg: "assets/role-selection.png",
     title: "Menu",
