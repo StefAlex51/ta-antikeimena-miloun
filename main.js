@@ -42,6 +42,7 @@ const STAGES = {
     bg: "assets/role-selection.png",
     title: "Menu",
     text: `Ancient Scanner Detector 3000`,
+  },
       
 
   instructions: {
