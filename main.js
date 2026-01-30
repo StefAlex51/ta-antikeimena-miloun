@@ -14,10 +14,10 @@ let currentStage = "intro";
 const STAGES = {
   intro: {
     bg: "assets/intro.png",
-    title: "Πονάει ο Λαιμός μου",
-    text: `Πιέστε το κουμπί για εκκίνηση`,
+    title: "Τα Αντικείμενα Μιλούν!",
+    text: `Πιέστε το "Αρχή" για εκκίνηση`,
     buttons: [
-      { label: "Κουμπί", action: () => {
+      { label: "Αρχή", action: () => {
           enableSound();
           playAmbient();
           speak(STAGES.intro.text);
@@ -33,35 +33,22 @@ const STAGES = {
   role: {
     bg: "assets/role-selection.png",
     title: "Menu",
-    text: `Ancient Scanner Detector 3200`,
+    text: `Ancient Scanner Detector 3000`,
     buttons: [
-      { label: "Open Scanner", action: () => goTo("lore") },
-      { label: "Library", action: () => goTo("instructions") }
-    ]
-  },
-
-  lore: {
-    bg: "assets/lore-keeper.png",
-    title: "Lore Keeper",
-    text: `Use AR to uncover traces. Each clue will reveal a part of the story.`,
-    buttons: [
-      { label: "Explore via AR", action: () => {
+      { label: "Open Scanner", action: () => {
           stopAmbient();
           window.open(`ar.html?from=${currentStage}`, "_blank");
       }},
-      { label: "Finish Task", action: () => goTo("end") },
-      { label: "Back", action: () => goTo("role") }
+      { label: "Library", action: () => goTo("instructions") }
     ]
   },
 
   instructions: {
     bg: "assets/instructions.png",
-    title: "How to Play — Overview",
+    title: "Library",
     text: `
-      • You play as the <b>Lore Keeper</b>.<br>
-      • Use your device camera to scan AR markers hidden in the environment.<br>
-      • Each marker reveals a voice message or a symbol.<br>
-      • Collect all the pieces, then finish your task.<br>
+      Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>
+      Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>
     `,
     buttons: [
       { label: "Back", action: () => goTo("role") }
