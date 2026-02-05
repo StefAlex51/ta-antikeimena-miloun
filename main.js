@@ -14,23 +14,18 @@ let currentStage = "intro";
 const STAGES = {
   intro: {
     bg: "assets/intro.png",
-    title: "Τα Αντικείμενα Μιλούν!",
+    title: "AR Experience",
     text: `Sth about the setting.`,
     buttons: [
-      { label: "Library", action: () => {
+      { label: "Start", action: () => {
           enableSound();
           playAmbient();
           speak(STAGES.intro.text);
           buttonsEl.innerHTML = "";
           const contBtn = document.createElement("button");
-          contBtn.textContent = "Library button again";
+          contBtn.textContent = "Continue";
           contBtn.addEventListener("click", () => goTo("role"));
           buttonsEl.appendChild(contBtn);
-          goTo("instructions")
-      }},
-       { label: "Open Scanner", action: () => {
-          stopAmbient();
-          window.open(ar.html?from=${currentStage}, "_blank");
       }}
     ]
   },
