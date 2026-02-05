@@ -15,10 +15,7 @@ const STAGES = {
   intro: {
     bg: "assets/intro.png",
     title: "Τα Αντικείμενα Μιλούν!",
-    text: 
-          blah blah blah context<br>
-          Πατήστε "Αρχή" για να συνεχίσετε!<br>
-          ,
+    text: 'blah blah blah context<br>Πατήστε Αρχή για να συνεχίσετε!',
     buttons: [
       { label: "Library", action: () => {
           enableSound();
@@ -48,10 +45,7 @@ const STAGES = {
   instructions: {
     bg: "assets/instructions.png",
     title: "Library",
-    text: `
-      Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>
-      Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>
-    `,
+    text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
     buttons: [
       { label: "Back", action: () => goTo("role") }
     ]
