@@ -26,7 +26,8 @@ const STAGES = {
           contBtn.textContent = "Continue";
           contBtn.addEventListener("click", () => goTo("role"));
           buttonsEl.appendChild(contBtn);
-      }}
+      }},
+      { label: "Ξεκίνημα ξανά", action: () => goTo("intro", true) }
     ]
   },
   
