@@ -8,11 +8,11 @@ const gameWrap     = document.getElementById("gameContainer");
 
 let soundEnabled = false;
 let narrationUtterance = false;
-let currentStage = "home";
+let currentStage = "intro";
 
 // ===== Stage data =====
 const STAGES = {
-  home: {
+  intro: {
     bg: "assets/intro.png",
     title: "AR Experience",
     text: `Sth about the setting.`,
@@ -34,7 +34,7 @@ const STAGES = {
     title: "Library",
     text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
     buttons: [
-      { label: "Back", action: () => goTo("home") }
+      { label: "Back", action: () => goTo("intro") }
     ]
   },
 
