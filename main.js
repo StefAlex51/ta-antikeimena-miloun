@@ -20,12 +20,7 @@ const STAGES = {
       { label: "Start", action: () => {
           enableSound();
           playAmbient();
-          speak(STAGES.intro.text);
-          buttonsEl.innerHTML = "";
-          const contBtn = document.createElement("button");
-          contBtn.textContent = "Continue";
-          contBtn.addEventListener("click", () => goTo("role"));
-          buttonsEl.appendChild(contBtn);
+          addEventListener("click", () => goTo("role"));
       }},
       { label: "Explore via AR", action: () => {
           stopAmbient();
