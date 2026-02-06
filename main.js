@@ -29,7 +29,7 @@ const STAGES = {
     ]
   },
 
-  instructions: {
+  library: {
     bg: "assets/instructions.png",
     title: "Library",
     text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
