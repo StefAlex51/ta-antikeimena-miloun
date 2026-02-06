@@ -7,7 +7,7 @@ const buttonsEl    = document.getElementById("buttonsContainer");
 const gameWrap     = document.getElementById("gameContainer");
 
 let soundEnabled = false;
-let narrationUtterance = false;
+let narrationUtterance = null;
 let currentStage = "intro";
 
 // ===== Stage data =====
