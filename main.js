@@ -33,6 +33,9 @@ const STAGES = {
     bg: "assets/role-selection.png",
     title: "Menu",
     text: `Ancient Scanner Detector 3000`,
+    buttons: [
+    { label: "Lore Keeper", action: () => goTo("lore") },
+    ]
   },
       
 
@@ -41,7 +44,7 @@ const STAGES = {
     title: "Library",
     text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
     buttons: [
-      { label: "Back", action: () => goTo("role") }
+      { label: "Back", action: () => goTo("intro") }
     ]
   },
 
