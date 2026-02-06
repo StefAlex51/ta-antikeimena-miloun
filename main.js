@@ -27,7 +27,10 @@ const STAGES = {
           contBtn.addEventListener("click", () => goTo("role"));
           buttonsEl.appendChild(contBtn);
       }},
-      { label: "Ξεκίνημα ξανά", action: () => goTo("intro", true) }
+      { label: "Explore via AR", action: () => {
+          stopAmbient();
+          window.open(`ar.html?from=${currentStage}`, "_blank");
+      }}
     ]
   },
   
