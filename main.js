@@ -20,7 +20,7 @@ const STAGES = {
       { label: "Start", action: () => {
           enableSound();
           playAmbient();
-          addEventListener("click", () => goTo("role"));
+          addEventListener("click", () => goTo("library"));
       }},
       { label: "Explore via AR", action: () => {
           stopAmbient();
@@ -28,16 +28,6 @@ const STAGES = {
       }}
     ]
   },
-  
-  role: {
-    bg: "assets/role-selection.png",
-    title: "Menu",
-    text: `Ancient Scanner Detector 3000`,
-    buttons: [
-    { label: "Lore Keeper", action: () => goTo("lore") },
-    ]
-  },
-      
 
   instructions: {
     bg: "assets/instructions.png",
@@ -45,6 +35,15 @@ const STAGES = {
     text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
     buttons: [
       { label: "Back", action: () => goTo("intro") }
+    ]
+  },
+
+  role: {
+    bg: "assets/role-selection.png",
+    title: "Menu",
+    text: `Ancient Scanner Detector 3000`,
+    buttons: [
+    { label: "Lore Keeper", action: () => goTo("intro") },
     ]
   },
 
