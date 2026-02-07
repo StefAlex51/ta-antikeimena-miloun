@@ -17,9 +17,11 @@ const STAGES = {
     title: "AR Experience",
     text: `Sth about the setting.`,
     buttons: [
-      { label: "Start", action: () => 
-        addEventListener("click", () => goTo("library"));
-      },
+      { label: "Start", action: () => {
+          addEventListener("click", () => goTo("library"));
+          ambientAudio.volume = 0.4;
+          disableSound();
+      }},
       { label: "Explore via AR", action: () => {
           stopAmbient();
           window.open(`ar.html?from=${currentStage}`, "_blank");
