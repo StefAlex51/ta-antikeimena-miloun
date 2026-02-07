@@ -18,9 +18,9 @@ const STAGES = {
     text: `Sth about the setting.`,
     buttons: [
       { label: "Start", action: () => {
-          playAmbient();
-          disableSound();
           addEventListener("click", () => goTo("library"));
+          ambientAudio.volume = 0.4;
+          disableSound();
       }},
       { label: "Explore via AR", action: () => {
           stopAmbient();
@@ -146,7 +146,7 @@ window.addEventListener("load", () => {
   const params = new URLSearchParams(window.location.search);
   const section = params.get("section");
   if (section && STAGES[section]) {
-    goTo(section);
+    goTo(stage);
   } else {
     goTo("intro");
   }
