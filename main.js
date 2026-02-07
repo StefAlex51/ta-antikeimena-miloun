@@ -1,4 +1,4 @@
-its﻿// ===== Global state & helpers =====
+// ===== Global state & helpers =====
 const ambientAudio = document.getElementById("ambientAudio");
 const voiceToggle  = document.getElementById("voiceToggle");
 const titleEl      = document.getElementById("title");
