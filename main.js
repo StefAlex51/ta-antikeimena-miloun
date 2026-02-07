@@ -1,4 +1,4 @@
-﻿// ===== Global state & helpers =====
+its﻿// ===== Global state & helpers =====
 const ambientAudio = document.getElementById("ambientAudio");
 const voiceToggle  = document.getElementById("voiceToggle");
 const titleEl      = document.getElementById("title");
@@ -14,8 +14,8 @@ let currentStage = "intro";
 const STAGES = {
   intro: {
     bg: "assets/intro.png",
-    title: "The Objects Speak",
-    text: `Mas ta prikses`,
+    title: "The Exhibits Speak",
+    text: `Use Your Scanner To Unravel The Hidden Story`,
     buttons: [
       { label: "Start", action: () => {
           addEventListener("click", () => goTo("library"));
