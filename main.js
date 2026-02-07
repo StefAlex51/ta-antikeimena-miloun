@@ -146,7 +146,7 @@ window.addEventListener("load", () => {
   const params = new URLSearchParams(window.location.search);
   const section = params.get("section");
   if (section && STAGES[section]) {
-    goTo(stage);
+    goTo(section);
   } else {
     goTo("intro");
   }
