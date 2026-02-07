@@ -19,8 +19,6 @@ const STAGES = {
     buttons: [
       { label: "Start", action: () => {
           addEventListener("click", () => goTo("library"));
-          ambientAudio.volume = 0.4;
-          disableSound();
       }},
       { label: "Explore via AR", action: () => {
           stopAmbient();
@@ -150,4 +148,5 @@ window.addEventListener("load", () => {
   } else {
     goTo("intro");
   }
+  ambientAudio.volume = 0.4;
 });
