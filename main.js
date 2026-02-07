@@ -18,7 +18,6 @@ const STAGES = {
     text: `Sth about the setting.`,
     buttons: [
       { label: "Start", action: () => {
-          enableSound();
           playAmbient();
           addEventListener("click", () => goTo("library"));
       }},
