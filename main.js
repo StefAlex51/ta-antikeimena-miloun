@@ -15,7 +15,7 @@ const STAGES = {
   intro: {
     bg: "assets/intro.png",
     title: "AR Experience",
-    text: `Sth about the setting.`,
+    text: `Mas ta prikses`,
     buttons: [
       { label: "Start", action: () => {
           addEventListener("click", () => goTo("library"));
