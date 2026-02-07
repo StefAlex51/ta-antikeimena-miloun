@@ -8,7 +8,7 @@ const gameWrap     = document.getElementById("gameContainer");
 
 let soundEnabled = false;
 let narrationUtterance = null;
-let currentStage = "intro";
+let currentStage = "role";
 
 // ===== Stage data =====
 const STAGES = {
