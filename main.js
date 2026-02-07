@@ -14,7 +14,7 @@ let currentStage = "intro";
 const STAGES = {
   intro: {
     bg: "assets/intro.png",
-    title: "AR Experience",
+    title: "The Objects Speak",
     text: `Mas ta prikses`,
     buttons: [
       { label: "Start", action: () => {
