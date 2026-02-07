@@ -34,7 +34,7 @@ const STAGES = {
     title: "Library",
     text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
     buttons: [
-      { label: "Back", action: () => goTo("intro") }
+      { label: "Back", action: () => goTo("intro", true) }
     ]
   },
 
