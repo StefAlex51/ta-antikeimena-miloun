@@ -9,7 +9,6 @@ const gameWrap     = document.getElementById("gameContainer");
 let soundEnabled = false;
 let narrationUtterance = null;
 let currentStage = "intro";
-let ambientAudio = true;
 
 // ===== Stage data =====
 const STAGES = {
@@ -34,7 +33,7 @@ const STAGES = {
     title: "Library",
     text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
     buttons: [
-      { label: "Back", action: () => goTo("intro", true) }
+      { label: "Back", action: () => goTo("intro") }
     ]
   },
 
