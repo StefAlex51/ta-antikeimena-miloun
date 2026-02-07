@@ -6,7 +6,7 @@ const storyEl      = document.getElementById("storyText");
 const buttonsEl    = document.getElementById("buttonsContainer");
 const gameWrap     = document.getElementById("gameContainer");
 
-let soundEnabled = true;
+let soundEnabled = false;
 let narrationUtterance = null;
 let currentStage = "intro";
 
