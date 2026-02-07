@@ -19,6 +19,7 @@ const STAGES = {
     buttons: [
       { label: "Start", action: () => {
           playAmbient();
+          disableSound();
           addEventListener("click", () => goTo("library"));
       }},
       { label: "Explore via AR", action: () => {
