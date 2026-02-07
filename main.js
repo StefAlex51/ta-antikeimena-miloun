@@ -15,7 +15,7 @@ const STAGES = {
   intro: {
     bg: "assets/intro.png",
     title: "The Exhibits Speak",
-    text: `Use Your Scanner To Unravel The Hidden Story.`,
+    text: `Sth about the setting.`,
     buttons: [
       { label: "Start", action: () => {
           addEventListener("click", () => goTo("library"));
