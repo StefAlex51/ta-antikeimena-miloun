@@ -18,22 +18,17 @@ const STAGES = {
     title: "The Exhibits Speak",
     text: `Sth about the setting.`,
     buttons: [
-      { label: "Start", action: () => {
-          addEventListener("click", () => goTo("library"));
-          ambientAudio.volume = 0.4;
-          disableSound();
-      }},
-      { label: "Explore via AR", action: () => {
+      { label: "Open Scanner", action: () => {
           stopAmbient();
           window.open(`ar.html?from=${currentStage}`, "_blank");
       }}
     ]
   },
 
-  library: {
+  story1: {
     bg: "assets/instructions.png",
-    title: "Library",
-    text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
+    title: "Το Πιθάρι του Πατέρα",
+    text: `ΙΣΤΟΡΙΑ ΜΕ ΠΙΘΑΡΙ`,
     buttons: [
       { label: "Back", action: () => goTo("intro") }
     ]
