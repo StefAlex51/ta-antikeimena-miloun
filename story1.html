@@ -8,23 +8,33 @@
     <title>The Exhibits Speak</title>
     
     <link rel="stylesheet" href="style.css" />
-
+    
+    <style>
+body {
+  background-image: url('assets/bg.png');
+}
+    </style>
   </head>
-  <body>
+  <body> 
     <!-- Your app lives here -->
-    <div id="storyText">
-      <img src="exhibits/1.png" alt="Logo"/>
-      <p>Ένας πατέρας πάντα πρέπει να παρέχει στο νοικοκυριό του. 
+    <div id="gameContainer">
+    <div id="contentBox">
+    <h1 id="title">Κεραμικό Πυθάρι</h1>
+      <img src="assets/exhibits/1.png" alt="Logo"/>
+      <p id="storyText">Ένας πατέρας πάντα πρέπει να παρέχει στο νοικοκυριό του. 
         Αυτός ο άντρας έχει κατέβει στην αγορά για να προμηθευτεί γάλα για τον μόλις τριών μηνών γιο του, 
         κουβαλώντας στα χέρια του ένα βαρύ πιθάρι. 
         Συνάντησε και παζάρεψε με τους γνωστούς εμπόρους της περιοχής και πήρε τον 
         δρόμο για το αρχοντικό του.
       </p>
+      <a href="index2.html"
+      <button id="buttonsContainer">
+      Back
+      </button>
+      </a>
+    </div>
     </div>
     
-    <a href="index2.html">
-    <p>Back</p>
-    </a>
 
     <!-- JavaScript (put at bottom so DOM exists first) -->
     <script src="main.js"></script>
