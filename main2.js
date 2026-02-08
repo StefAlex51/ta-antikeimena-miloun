@@ -5,6 +5,7 @@ const titleEl      = document.getElementById("title");
 const storyEl      = document.getElementById("storyText");
 const buttonsEl    = document.getElementById("buttonsContainer");
 const gameWrap     = document.getElementById("gameContainer");
+const ImageEl      = document.getElementById("Image");
 
 let soundEnabled = false;
 let narrationUtterance = null;
@@ -129,7 +130,7 @@ function goTo(stage, resetAll = false) {
   if (s.bg) gameWrap.style.backgroundImage = `url('${s.bg}')`;
   titleEl.textContent = s.title || "";
   storyEl.innerHTML = s.text || "";
-
+  
   buttonsEl.innerHTML = "";
   (s.buttons || []).forEach(b => {
     const btn = document.createElement("button");
@@ -137,6 +138,14 @@ function goTo(stage, resetAll = false) {
     btn.addEventListener("click", b.action);
     buttonsEl.appendChild(btn);
   });
+  
+  if (s.image) {
+    imageEl.src = s.image;
+    imageEl.style.display = "block";
+  } else {
+    imageEl.style.display = "none";
+    imageEl.src = "";
+  }
 
   if (soundEnabled) speak(s.text || "");
 }
