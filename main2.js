@@ -14,12 +14,17 @@ let currentStage = "intro";
 const STAGES = {
   intro: {
     bg: "assets/intro.png",
-    title: "STORY",
-    text: `BLA BLA BLA THA SAS PW MIA ISTORIA`,
+    title: "The Exhibits Speak",
+    text: `Sth about the setting.`,
     buttons: [
-      { label: "Next", action: () => {
-          window.location.href = "index2.html";
-
+      { label: "Start", action: () => {
+          addEventListener("click", () => goTo("library"));
+          ambientAudio.volume = 0.4;
+          disableSound();
+      }},
+      { label: "Explore via AR", action: () => {
+          stopAmbient();
+          window.open(`ar.html?from=${currentStage}`, "_blank");
       }}
     ]
   },
