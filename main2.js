@@ -7,7 +7,7 @@ const buttonsEl    = document.getElementById("buttonsContainer");
 const gameWrap     = document.getElementById("gameContainer");
 const ImageEl      = document.getElementById("Image");
 
-let soundEnabled = false;
+let soundEnabled = true;
 let narrationUtterance = null;
 let currentStage = "intro";
 
@@ -104,7 +104,6 @@ voiceToggle.addEventListener("click", () => {
   } else {
     enableSound();
     playAmbient();
-    if (STAGES[currentStage]) speak(STAGES[currentStage].text);
   }
 });
 
@@ -142,7 +141,7 @@ function goTo(stage, resetAll = false) {
     imageEl.src = "";
   }
 
-  if (soundEnabled) speak(s.text || "");
+ 
 }
 
 // ===== Init =====
@@ -155,4 +154,9 @@ window.addEventListener("load", () => {
     goTo("intro");
   }
   ambientAudio.volume = 0.4;
+  enableSound();
+  cancelNarration();
+  playAmbient();
+  
+  
 });

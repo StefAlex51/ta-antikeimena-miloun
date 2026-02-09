@@ -103,7 +103,6 @@ voiceToggle.addEventListener("click", () => {
   } else {
     enableSound();
     playAmbient();
-    if (STAGES[currentStage]) speak(STAGES[currentStage].text);
   }
 });
 
@@ -133,7 +132,7 @@ function goTo(stage, resetAll = false) {
     buttonsEl.appendChild(btn);
   });
 
-  if (soundEnabled) speak(s.text || "");
+ 
 }
 
 // ===== Init =====
@@ -146,4 +145,7 @@ window.addEventListener("load", () => {
     goTo("intro");
   }
   ambientAudio.volume = 0.4;
+  enableSound();
+  cancelNarration();
+  playAmbient();
 });
