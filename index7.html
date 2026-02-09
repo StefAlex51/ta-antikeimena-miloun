@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Τα Αντικείμενα Μιλούν</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient sound (loop). -->
+  <audio id="ambientAudio" src="assets/sounds/backgroundloop.mp3" loop></audio>
+
+  <!-- Global sound toggle (ambience + narration) -->
+  <button id="voiceToggle" aria-label="Toggle sound">🔇</button>
+
+  <!-- Main container που γεμίζει δυναμικά από το main.js -->
+  <div id="gameContainer">
+    <div id="contentBox">
+      <img id="Image" src="assets/map/map5.png" width="100%" height="100%"/>
+      <h1 id="title"></h1>
+      <p id="storyText"></p>
+      <div id="buttonsContainer"></div>
+    </div>
+  </div>
+
+  <!-- Το main.js διαχειρίζεται εισαγωγή, οδηγίες, Explore AR και τέλος/επανεκκίνηση -->
+  <script src="main2.js"></script>
+</body>
+</html>
