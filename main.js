@@ -24,23 +24,7 @@ const STAGES = {
     ]
   },
 
-  library: {
-    bg: "assets/instructions.png",
-    title: "Library",
-    text: `Έδω βρίσκονται τα αντικείμενα που έχεις βρεί!<br>Συνέχισε να ψάχνεις μέχρι να ολοκληρώσεις την ιστορία!<br>`,
-    buttons: [
-      { label: "Back", action: () => goTo("intro") }
-    ]
-  },
 
-  role: {
-    bg: "assets/role-selection.png",
-    title: "Menu",
-    text: `Ancient Scanner Detector 3000`,
-    buttons: [
-    { label: "Lore Keeper", action: () => goTo("intro") },
-    ]
-  },
 
   // ——— Minimal edits so the end "has meaning" ———
   end: {
