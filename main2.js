@@ -16,7 +16,7 @@ const STAGES = {
   intro: {
     bg: "assets/intro.png",
     title: "The Exhibits Speak",
-    text: `Sth about the setting.`,
+    text: `Ακούστε την Ιστορία τους!`,
     buttons: [
       { label: "Open Scanner", action: () => {
           stopAmbient();
