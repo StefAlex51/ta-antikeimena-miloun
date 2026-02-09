@@ -18,7 +18,7 @@ const STAGES = {
     title: "The Exhibits Speak",
     text: `Ακούστε την Ιστορία τους!`,
     buttons: [
-      { label: "Open Scanner", action: () => {
+      { label: "Άνοιγμα Σαρωτή", action: () => {
           stopAmbient();
           window.open(`ar.html?from=${currentStage}`, "_blank");
       }}
