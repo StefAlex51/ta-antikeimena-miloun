@@ -14,8 +14,8 @@ let currentStage = "intro";
 const STAGES = {
   intro: {
     bg: "assets/intro.png",
-    title: "STORY",
-    text: `BLA BLA BLA THA SAS PW MIA ISTORIA`,
+    title: "Τα Αντικείμενα Μιλούν",
+    text: `Χρησιμοποιήστε τη κινητή σας συσκευή για να σαρώσετε αρχαία αντικείμενα! Το λογισμικό θα αναλύσει το γενετικό υλικό και τα σημάδια φθοράς πάνω τους για να σχηματίσει την ιστορία του καθενός από αυτά!`,
     buttons: [
       { label: "Next", action: () => {
           window.location.href = "index2.html";
