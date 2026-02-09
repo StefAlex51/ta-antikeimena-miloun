@@ -47,7 +47,7 @@
   <div id="ar-ui" class="mindar-container"></div>
 
   <script type="module">
-    //import { loadGLTF, loadAudio } from "./libs/loader.js";
+    import { loadGLTF, loadAudio } from "./libs/loader.js";
     const THREE = window.MINDAR.IMAGE.THREE;
 
     let mindarThree = null;
@@ -68,57 +68,29 @@
     returnButton.addEventListener("click", goBackToRolePage);
 
     // Function to create the AR experience (gltf model, mp3 sound)
-      //const createExperience = async (modelPath, anchorIndex, listener, audioPath, scaleVector) => {
-      //const model = await loadGLTF(modelPath);
-      //model.scene.scale.copy(scaleVector);
-      //model.scene.position.set(0, 0, 0);
+    const createExperience = async (modelPath, anchorIndex, listener, audioPath, scaleVector) => {
+      const model = await loadGLTF(modelPath);
+      model.scene.scale.copy(scaleVector);
+      model.scene.position.set(0, 0, 0);
 
-      //const anchor = mindarThree.addAnchor(anchorIndex);
-      //anchor.group.add(model.scene);
+      const anchor = mindarThree.addAnchor(anchorIndex);
+      anchor.group.add(model.scene);
 
-      //const audioBuffer = await loadAudio(audioPath);
+      const audioBuffer = await loadAudio(audioPath);
 
-      //const audio = new THREE.PositionalAudio(listener);
-      //audio.setBuffer(audioBuffer);
-      //audio.setRefDistance(100);
-      //audio.setLoop(true);
-      //audio.setVolume(0.5); // volume 0-1
+      const audio = new THREE.PositionalAudio(listener);
+      audio.setBuffer(audioBuffer);
+      audio.setRefDistance(100);
+      audio.setLoop(true);
+      audio.setVolume(0.5); // volume 0-1
 
-      //anchor.group.add(audio);
+      anchor.group.add(audio);
 
-      //anchor.onTargetFound = () => audio.play();
-      //anchor.onTargetLost = () => audio.pause();
+      anchor.onTargetFound = () => audio.play();
+      anchor.onTargetLost = () => audio.pause();
 
-      //return anchor;
-    //};
-      let redirected = false;
-      const createRedirectExperience = (anchorIndex, url) => {
-        const anchor = mindarThree.addAnchor(anchorIndex);
-
-        anchor.onTargetFound = () => {
-        if (redirected) return;
-        redirected = true;
-        window.open(url, "_blank");
-        };
-
-    anchor.onTargetLost = () => {};
-    return anchor;
-      };
-
-
-      const createImageExperience = async (anchorIndex, imagePath, width = 1.0, height = 0.6) => {
-        const anchor = mindarThree.addAnchor(anchorIndex);
-
-        const texture = await new THREE.TextureLoader().loadAsync(imagePath);
-        const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
-        const geometry = new THREE.PlaneGeometry(width, height);
-        const plane = new THREE.Mesh(geometry, material);
-
-        plane.position.set(0, 0, 0);
-        anchor.group.add(plane);
-
-        return anchor;
-      };
+      return anchor;
+    };
 
     const start = async () => {
       if (isStarted) return;
@@ -126,43 +98,25 @@
 
       mindarThree = new window.MINDAR.IMAGE.MindARThree({
         container: arUI,
-        imageTargetSrc: './assets/targets/target.mind' 
+        imageTargetSrc: './assets/targets/target.mind' // Βεβαιώσου ότι περιέχει 3 στόχους
       });
 
       const { renderer, scene, camera } = mindarThree;
 
-      //const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
-      //scene.add(light);
+      const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+      scene.add(light);
 
-      //const listener = new THREE.AudioListener();
-      //camera.add(listener);
+      const listener = new THREE.AudioListener();
+      camera.add(listener);
 
       // Create 3 AR experiences
-          createRedirectExperience(0, "https://github.com");
-        //await createExperience(
-        //'./assets/models/model1/scene.gltf', 
-        //0, 
-        //listener, 
-        //'./assets/sounds/sound1.mp3', 
-        //new THREE.Vector3(0.2, 0.2, 0.2) 
-      //);
+        createRedirectExperience(0, "https://github.com");
 
-          await createImageExperience(1, "./assets/image.png", 1.0, 0.6);
-        //await createExperience(
-        //'./assets/models/listener/scene.gltf', 
-        //1, 
-        //listener, 
-        //'./assets/sounds/sound2.mp3', 
-        //new THREE.Vector3(0.2, 0.2, 0.2) 
-      //);
-
-      //await createExperience(
-        //'./assets/models/nemesis/scene.gltf', 
-        //2, 
-        //listener, 
-        //'./assets/sounds/sound3.mp3', 
-        //new THREE.Vector3(1.3, 1.3, 1.3)
-      //);
+      await createRedirectExperience(1, "index3.html");
+        
+        await createRedirectExperience(2, window.location.href = index3.html;)
+        await createRedirectExperience(3);
+        window.location.href = index3.html;
 
       await mindarThree.start();
 
