@@ -110,13 +110,29 @@
       camera.add(listener);
 
       // Create 3 AR experiences
-        createRedirectExperience(0, "https://github.com");
+      await createExperience(
+        './assets/models/model1/scene.gltf', 
+        0, 
+        listener, 
+        './assets/sounds/sound1.mp3', 
+        new THREE.Vector3(0.2, 0.2, 0.2) 
+      );
 
-      await createRedirectExperience(1, "index3.html");
-        
-        await createRedirectExperience(2, window.location.href = "index3.html";)
-        await createRedirectExperience(3);
-        window.location.href = "index3.html";
+      await createExperience(
+        './assets/models/listener/scene.gltf', 
+        1, 
+        listener, 
+        './assets/sounds/sound2.mp3', 
+        new THREE.Vector3(0.2, 0.2, 0.2) 
+      );
+
+      await createExperience(
+        './assets/models/nemesis/scene.gltf', 
+        2, 
+        listener, 
+        './assets/sounds/sound3.mp3', 
+        new THREE.Vector3(1.3, 1.3, 1.3)
+      );
 
       await mindarThree.start();
 
