@@ -21,6 +21,9 @@ const STAGES = {
       { label: "Άνοιγμα Σαρωτή", action: () => {
           stopAmbient();
           window.open(`ar.html?from=${currentStage}`, "_blank");
+	  { label: "Άνοιγμα Σαρωτή", action: () => {
+          stopAmbient();
+          window.open(`ar.html?from=${currentStage}`, "_blank");
       }}
     ]
   },
