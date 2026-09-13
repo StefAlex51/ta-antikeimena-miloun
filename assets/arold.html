@@ -57,19 +57,6 @@
     const returnButton = document.getElementById("return-button");
     const arUI = document.getElementById("ar-ui");
 
-    // Map your 6 index numbers to the pages you want to open!
-    const modelLinks = {
-      0: 'pithari.html',
-      1: 'kleidi.html',
-      2: 'vrastiras.html',
-      3: 'kathreftis.html',
-      4: 'baniera.html',
-      5: 'tsagiera.html'
-    };
-
-    // List to hold targets for tapping
-    const clickableTargets = [];
-
     // --- FIX: get 'from' from query string ---
     const params = new URLSearchParams(window.location.search);
     const from = params.get('from') || 'lore'; // fallback to 'lore' if not set
@@ -85,10 +72,6 @@
       const model = await loadGLTF(modelPath);
       model.scene.scale.copy(scaleVector);
       model.scene.position.set(0, 0, 0);
-
-      // Save identity index directly inside model data so tap listener can find it!
-      model.scene.userData = { id: anchorIndex };
-      clickableTargets.push(model.scene);
 
       const anchor = mindarThree.addAnchor(anchorIndex);
       anchor.group.add(model.scene);
@@ -128,81 +111,28 @@
 
       // Create 3 AR experiences
       await createExperience(
-        './assets/models/pithar/pithar1.glb', 
+        './assets/models/model1/scene.gltf', 
         0, 
         listener, 
-        './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
+        './assets/sounds/sound1.mp3', 
+        new THREE.Vector3(0.2, 0.2, 0.2) 
       );
 
       await createExperience(
-        './assets/models/kleid/kleid2.glb', 
+        './assets/models/listener/scene.gltf', 
         1, 
         listener, 
-        './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1)  
-      );
-	  
-	  await createExperience(
-        './assets/models/vrastir/vrastir3.glb', 
-        2, 
-        listener, 
-        './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
-      );
-	  
-	  await createExperience(
-        './assets/models/kathreft/kathreft4.glb', 
-        3, 
-        listener, 
-        './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1)  
+        './assets/sounds/sound2.mp3', 
+        new THREE.Vector3(0.2, 0.2, 0.2) 
       );
 
       await createExperience(
-        './assets/models/banier/banier5.glb', 
-        4, 
+        './assets/models/nemesis/scene.gltf', 
+        2, 
         listener, 
-        './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
+        './assets/sounds/sound3.mp3', 
+        new THREE.Vector3(1.3, 1.3, 1.3)
       );
-	  
-	  await createExperience(
-        './assets/models/tsagier/tsagier6.glb', 
-        5, 
-        listener, 
-        './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
-      );
-
-      // Raycaster setup for screen tapping!
-      const raycaster = new THREE.Raycaster();
-      const mouse = new THREE.Vector2();
-
-      window.addEventListener('click', (event) => {
-        // Skip clicks if clicking on UI controls
-        if (event.target.tagName === 'BUTTON') return;
-
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObjects(clickableTargets, true);
-
-        if (intersects.length > 0) {
-          let hitObject = intersects[0].object;
-          
-          // Climb up hierarchy to find root node containing our ID tag
-          while (hitObject.parent && (!hitObject.userData || hitObject.userData.id === undefined)) {
-            hitObject = hitObject.parent;
-          }
-
-          const modelId = hitObject.userData.id;
-          if (modelId !== undefined && modelLinks[modelId]) {
-            window.location.href = modelLinks[modelId];
-          }
-        }
-      });
 
       await mindarThree.start();
 
