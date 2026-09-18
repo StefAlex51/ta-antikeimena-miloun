@@ -68,7 +68,7 @@
     returnButton.addEventListener("click", goBackToRolePage);
 
     // Function to create the AR experience (gltf model, mp3 sound)
-    const createExperience = async (modelPath, anchorIndex, listener, audioPath, scaleVector) => {
+    const createExperience = async (modelPath, anchorIndex, listener, audioPath, scaleVector, pagePath) => {
       const model = await loadGLTF(modelPath);
       model.scene.scale.copy(scaleVector);
       model.scene.position.set(0, 0, 0);
@@ -86,7 +86,13 @@
 
       anchor.group.add(audio);
 
-      anchor.onTargetFound = () => audio.play();
+      anchor.onTargetFound = () => {
+
+        audio.play();
+
+        window.location.href = pagePath;
+
+    };
       anchor.onTargetLost = () => audio.pause();
 
       return anchor;
@@ -115,7 +121,8 @@
         0, 
         listener, 
         './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
+        new THREE.Vector3(1, 1, 1),
+        'story1.html' 
       );
 
       await createExperience(
@@ -123,7 +130,8 @@
         1, 
         listener, 
         './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1)  
+        new THREE.Vector3(1, 1, 1),
+        'story2.html'  
       );
 	  
 	  await createExperience(
@@ -131,7 +139,8 @@
         2, 
         listener, 
         './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
+        new THREE.Vector3(1, 1, 1),
+        'story3.html' 
       );
 	  
 	  await createExperience(
@@ -139,7 +148,8 @@
         3, 
         listener, 
         './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1)  
+        new THREE.Vector3(1, 1, 1),
+        'story4.html'  
       );
 
       await createExperience(
@@ -147,7 +157,8 @@
         4, 
         listener, 
         './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
+        new THREE.Vector3(1, 1, 1),
+        'story5.html' 
       );
 	  
 	  await createExperience(
@@ -155,7 +166,8 @@
         5, 
         listener, 
         './assets/sounds/woh.mp3', 
-        new THREE.Vector3(1, 1, 1) 
+        new THREE.Vector3(1, 1, 1),
+        'story6.html' 
       );
 
       await mindarThree.start();
