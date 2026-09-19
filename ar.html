@@ -88,11 +88,17 @@
 
       anchor.onTargetFound = () => {
 
-        audio.play();
+  audio.play();
 
-        window.location.href = pagePath;
+ 
 
-    };
+  if (confirm("FART??")) {
+
+    window.location.href = pagePath;
+
+  }
+
+};
       anchor.onTargetLost = () => audio.pause();
 
       return anchor;
