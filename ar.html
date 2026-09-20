@@ -86,20 +86,31 @@
 
       anchor.group.add(audio);
 
+
+      let redirectTimer = null;
+
       anchor.onTargetFound = () => {
+        audio.play();
 
-  audio.play();
+        if (redirectTimer) return;
 
- 
+        redirectTimer = setTimeout(() => {
+          if (confirm("FART??")) {
+            window.location.href = pagePath;
+          } else {
+            redirectTimer = null;
+          }
+        }, 5000);
+      };
 
-  if (confirm("FART??")) {
+      anchor.onTargetLost = () => {
+        audio.pause();
 
-    window.location.href = pagePath;
-
-  }
-
-};
-      anchor.onTargetLost = () => audio.pause();
+        if (redirectTimer) {
+          clearTimeout(redirectTimer);
+          redirectTimer = null;
+        }
+      };
 
       return anchor;
     };
