@@ -68,10 +68,10 @@
     returnButton.addEventListener("click", goBackToRolePage);
 
     // Function to create the AR experience (gltf model, mp3 sound)
-    const createExperience = async (modelPath, anchorIndex, listener, audioPath, scaleVector, pagePath) => {
+    const createExperience = async (modelPath, anchorIndex, listener, audioPath, scaleVector, positionVector, pagePath) => {
       const model = await loadGLTF(modelPath);
       model.scene.scale.copy(scaleVector);
-      model.scene.position.set(0, 0, 0);
+      model.scene.position.copy(positionVector);
 
       const anchor = mindarThree.addAnchor(anchorIndex);
       anchor.group.add(model.scene);
@@ -139,6 +139,7 @@
         listener, 
         './assets/sounds/loading.mp3', 
         new THREE.Vector3(1, 1, 1),
+        new THREE.Vector3(0, 0, 0),
         'story1.html' 
       );
 
@@ -148,6 +149,7 @@
         listener, 
         './assets/sounds/loading.mp3', 
         new THREE.Vector3(1, 1, 1),
+        new THREE.Vector3(0, 0, 0),
         'story2.html'  
       );
 	  
@@ -157,6 +159,7 @@
         listener, 
         './assets/sounds/loading.mp3', 
         new THREE.Vector3(1, 1, 1),
+        new THREE.Vector3(0, 0, 0),
         'story3.html' 
       );
 	  
@@ -166,6 +169,7 @@
         listener, 
         './assets/sounds/loading.mp3', 
         new THREE.Vector3(1, 1, 1),
+        new THREE.Vector3(0, 0, 0),
         'story4.html'  
       );
 
@@ -175,6 +179,7 @@
         listener, 
         './assets/sounds/loading.mp3', 
         new THREE.Vector3(1, 1, 1),
+        new THREE.Vector3(0, 0, 0),
         'story5.html' 
       );
 	  
@@ -184,6 +189,7 @@
         listener, 
         './assets/sounds/loading.mp3', 
         new THREE.Vector3(1, 1, 1),
+        new THREE.Vector3(0, 0, 0),
         'story6.html' 
       );
 
