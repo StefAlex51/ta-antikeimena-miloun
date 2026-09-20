@@ -95,12 +95,12 @@
         if (redirectTimer) return;
 
         redirectTimer = setTimeout(() => {
-          if (confirm("Σάρωση επιτυχής. Πατήστε <<Ναι>> για προβολή υλικού.")) {
+          if (confirm("Σάρωση επιτυχής. Πατήστε «ΟΚ» για προβολή υλικού.")) {
             window.location.href = pagePath;
           } else {
             redirectTimer = null;
           }
-        }, 5000);
+        }, 4000);
       };
 
       anchor.onTargetLost = () => {
